@@ -69,6 +69,7 @@ resource "azurerm_network_interface" "data" {
 
 resource "azurerm_windows_virtual_machine" "front" {
   name                = local.vm_front_name
+  computer_name       = "vm-fend-cin-001"
   resource_group_name = azurerm_resource_group.main.name
   location            = var.location_app
   size                = var.vm_size
@@ -95,6 +96,7 @@ resource "azurerm_windows_virtual_machine" "front" {
 
 resource "azurerm_windows_virtual_machine" "back" {
   name                = local.vm_back_name
+  computer_name       = "vm-bend-cin-001"
   resource_group_name = azurerm_resource_group.main.name
   location            = var.location_app
   size                = var.vm_size
@@ -121,6 +123,7 @@ resource "azurerm_windows_virtual_machine" "back" {
 
 resource "azurerm_windows_virtual_machine" "data" {
   name                = local.vm_data_name
+  computer_name       = "vm-data-aes-001"
   resource_group_name = azurerm_resource_group.main.name
   location            = var.location_data
   size                = var.vm_size
