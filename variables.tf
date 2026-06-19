@@ -52,9 +52,9 @@ variable "my_public_ip_cidr" {
 }
 
 variable "vm_size" {
-  description = "Tamanho das VMs. O guia usa Standard_B2s."
+  description = "Tamanho das VMs."
   type        = string
-  default     = "Standard_B2s"
+  default     = "Standard_D2s_v3"
 }
 
 variable "enable_vm_extensions" {
