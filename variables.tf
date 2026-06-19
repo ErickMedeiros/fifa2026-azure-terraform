@@ -13,13 +13,13 @@ variable "environment" {
 variable "location_app" {
   description = "Região da camada de aplicação."
   type        = string
-  default     = "Central India"
+  default     = "Mexico Central"
 }
 
 variable "location_data" {
   description = "Região da camada de banco de dados."
   type        = string
-  default     = "Australia East"
+  default     = "Chile Central"
 }
 
 variable "admin_username" {

@@ -121,6 +121,12 @@ resource "azurerm_windows_virtual_machine" "back" {
   provision_vm_agent = true
 }
 
+resource "azurerm_marketplace_agreement" "sql2022" {
+  publisher = "MicrosoftSQLServer"
+  offer     = "SQL2022-WS2022"
+  plan      = "SQLDEV-GEN2"
+}
+
 resource "azurerm_windows_virtual_machine" "data" {
   name                = local.vm_data_name
   computer_name       = "vm-data-aes-001"
@@ -131,6 +137,8 @@ resource "azurerm_windows_virtual_machine" "data" {
   admin_password      = var.sql_admin_password
   network_interface_ids = [azurerm_network_interface.data.id]
   tags                = var.tags
+
+  depends_on = [azurerm_marketplace_agreement.sql2022]
 
   os_disk {
     caching              = "ReadWrite"

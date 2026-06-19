@@ -55,5 +55,7 @@ resource "azurerm_virtual_network_peering" "data_to_app" {
   virtual_network_name      = azurerm_virtual_network.data.name
   remote_virtual_network_id = azurerm_virtual_network.app.id
   allow_forwarded_traffic   = true
+
+  depends_on = [azurerm_virtual_network_peering.app_to_data]
 }
 
