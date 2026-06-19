@@ -14,7 +14,7 @@ resource "azurerm_virtual_machine_extension" "backend_setup" {
     fileUris = ["https://raw.githubusercontent.com/ErickMedeiros/fifa2026-azure-terraform/main/scripts/setup-backend.ps1"]
   })
 
-  depends_on = [azurerm_mssql_virtual_machine.data]
+  depends_on = [azurerm_windows_virtual_machine.data]
 }
 
 resource "azurerm_virtual_machine_extension" "frontend_setup" {
@@ -52,5 +52,5 @@ resource "azurerm_virtual_machine_extension" "sql_prepare" {
     fileUris = ["https://raw.githubusercontent.com/ErickMedeiros/fifa2026-azure-terraform/main/scripts/setup-sql.ps1"]
   })
 
-  depends_on = [azurerm_mssql_virtual_machine.data]
+  depends_on = [azurerm_windows_virtual_machine.data]
 }

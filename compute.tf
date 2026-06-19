@@ -153,21 +153,6 @@ resource "azurerm_windows_virtual_machine" "data" {
     version   = "latest"
   }
 
-  plan {
-    publisher = "MicrosoftSQLServer"
-    product   = "SQL2022-WS2022"
-    name      = "SQLDEV-GEN2"
-  }
-
   provision_vm_agent = true
 }
 
-resource "azurerm_mssql_virtual_machine" "data" {
-  virtual_machine_id               = azurerm_windows_virtual_machine.data.id
-  sql_license_type                 = "PAYG"
-  sql_connectivity_type            = "PRIVATE"
-  sql_connectivity_port            = 1433
-  sql_connectivity_update_username = var.sql_admin_username
-  sql_connectivity_update_password = var.sql_admin_password
-
-}
