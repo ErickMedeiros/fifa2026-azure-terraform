@@ -159,5 +159,4 @@ resource "azurerm_mssql_virtual_machine" "data" {
   sql_connectivity_update_username = var.sql_admin_username
   sql_connectivity_update_password = var.sql_admin_password
 
-  depends_on = [azurerm_virtual_network_peering.app_to_data, azurerm_virtual_network_peering.data_to_app]
 }
