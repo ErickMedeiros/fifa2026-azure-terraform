@@ -1,0 +1,8 @@
+# Copie este arquivo para terraform.tfvars e ajuste os valores.
+admin_password      = "TroquePorUmaSenhaForte@2026"
+sql_admin_password  = "Partiunuvem@2026"
+my_public_ip_cidr   = "SEU_IP_PUBLICO/32"
+jwt_secret          = "troque-por-uma-string-longa-aleatoria"
+
+# Opcional: deixe false se preferir configurar IIS/Node/ARR manualmente via RDP.
+enable_vm_extensions = false
